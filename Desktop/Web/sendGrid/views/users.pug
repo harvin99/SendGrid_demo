@@ -1,0 +1,34 @@
+extend ./layout/common.pug
+block content
+  h1.text-center this is user page
+  .container
+    if isAdmin
+      a.btn.btn-primary.mb-3(href='/users/create_user') New user
+    table.table.table-striped
+      thead
+        tr
+          th Name
+          th Email
+          th Phone
+          th
+          th
+      tbody
+        if countUser === 1
+          tr
+            td= users.name
+            td= users.email
+            td= users.phone
+        else if countUser > 1
+          each user in users
+            tr
+              td= user.name
+              td= user.email
+              td= user.phone
+              td
+                a.btn.btn-warning.ml-3.float-right(href= '/users/'+ user.id ) Edit  
+              td
+                a.btn.btn-danger.ml-3.float-right(href='/users/'+ user.id + '/delete' ) Delete
+
+    
+
+          

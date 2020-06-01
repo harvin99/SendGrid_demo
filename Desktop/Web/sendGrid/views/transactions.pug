@@ -1,0 +1,22 @@
+extend ./layout/common.pug
+block content
+  h1.text-center This is transaction page
+  .container
+    a.btn.btn-primary.mb-3(href='transactions/create') Rent book
+    table.table.table-striped
+          thead
+            tr
+              th UserId
+              th BookId
+              th Status
+              th
+          tbody
+            each tran in trans
+              tr
+                td= tran.userId
+                td= tran.bookId
+                td
+                  if tran.isComplete
+                    a.btn.btn-primary.ml-3(href='/transactions/' + tran.id + '/complete') Completed
+                  else
+                    a.btn.btn-primary.ml-3(href='/transactions/' + tran.id + '/complete') Complete

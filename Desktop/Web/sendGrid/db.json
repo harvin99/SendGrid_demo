@@ -1,0 +1,41 @@
+{
+  "books": [
+    {
+      "id": "6RFWnDf70",
+      "title": "Đệ nhất kiếm tiền",
+      "description": "Huấn Rose"
+    },
+    {
+      "id": "937accNkD",
+      "title": "Lịch sử thế giới",
+      "description": "Các sự kiện đã qua"
+    }
+  ],
+  "users": [
+    {
+      "id": "NwuEhLgUn",
+      "name": "admin",
+      "email": "admin@admin.com",
+      "phone": "123123",
+      "password": "$2b$10$H7.SbE5DxWSqQND852902ur/QqXvg0EDw.vrX.edUIIGiPjKrXEou",
+      "isAdmin": true
+    },
+    {
+      "id": "u3QGGmoqQ",
+      "name": "HarVin",
+      "email": "hungtx1001@gmail.com",
+      "phone": "123321",
+      "password": "$2b$10$v9nBQzkxIFEyLSbDUwL1e.1Afms5GmydRnI1qR0h5kO4sJcM1kF5K",
+      "isAdmin": false
+    },
+    {
+      "id": "HYXX4jdQE",
+      "name": "Trần Quang Huy",
+      "email": "1760323@student.hcmus.edu.vn",
+      "phone": "123321",
+      "password": "$2b$10$dEMrw91dLTAnwVQzoqIaGe.0vSUCkaym3koFmwoykTmcFw9xg6LDe",
+      "isAdmin": false
+    }
+  ],
+  "rents": []
+}

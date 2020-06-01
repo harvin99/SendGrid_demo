@@ -1,0 +1,20 @@
+extend ./layout/common.pug
+block content
+  h1.text-center This is books page
+  .container
+    if user.isAdmin
+      a.btn.btn-primary.mb-3(href='/books/create') New book
+    table.table.table-striped
+      thead
+        tr
+          th Title
+          th  
+      tbody
+        each book in list
+          tr
+            td= book.title
+            if user.isAdmin
+              td 
+                a.btn.btn-danger.ml-3.float-right(href='/books/'+ book.id + '/delete' ) Delete
+                a.btn.btn-warning.ml-3.float-right(href= '/books/'+ book.id ) Edit
+            

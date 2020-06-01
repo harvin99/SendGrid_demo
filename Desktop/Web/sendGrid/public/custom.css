@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 2em 1em;
+  line-height: 1.5em;
+}
+.logo {
+  height: 45px;
+  width: 45px;
+}
+.username {
+  margin: auto 0px;
+}
