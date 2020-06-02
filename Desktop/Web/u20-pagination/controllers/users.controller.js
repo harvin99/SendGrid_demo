@@ -11,9 +11,20 @@ module.exports.getUser = (req, res) => {
     .get("users")
     .find({ id: req.signedCookies.userId })
     .value();
+
+  var page = parseInt(req.query.page) || 1
+  const perPage = 8
+
+  var start = (page - 1)* perPage
+  var end = page * perPage
+  var items = db.get("users").value().slice(start, end)
+
   if (user.isAdmin) {
     res.render("users", {
-      users: db.get("users").value(),
+      users: items,
+      currenPage: page,
+      nextPage: page + 1,
+      previousPage: page - 1,
       countUser: db.get("users").value().length,
       isAdmin: true
     });

@@ -28,9 +28,8 @@ module.exports.postLogin = async (req, res) => {
     })
     return
   }
-  var wrongLoginCount = user.wrongLoginCount
  
-  if(wrongLoginCount >= 4){
+  if(user.wrongLoginCount >= 4){
     res.render('auth/login', {
       errors: [
         'Input wrong password too more, Lock login'
@@ -56,9 +55,8 @@ module.exports.postLogin = async (req, res) => {
       return
     }
     if(!await bcrypt.compare(password, user.password)){
-      wrongLoginCount = wrongLoginCount + 1
       db.get('users').find({id: user.id})
-        .assign({wrongLoginCount: wrongLoginCount})
+        .assign({wrongLoginCount: user.wrongLoginCount + 1})
         .write()
       res.render('auth/login', {
         errors: [
@@ -68,8 +66,6 @@ module.exports.postLogin = async (req, res) => {
       })
     return 
   }
-
-
 
   res.cookie('userId', user.id, {
     signed: true
